@@ -1,19 +1,29 @@
-ages = [24, 30, 18, 20, 41]
+class StandardDeviation
 
-sum = ages.sum
+  def initialize(numbers)
+    @numbers = numbers
+  end
 
-num = ages.length
+  def calculate_standard_deviation
+    sum = @numbers.sum
 
-divide = sum.to_f / num.to_f
+    num = @numbers.length
 
-sub = ages.map { |age| age - divide }
+    divide = sum.to_f / num.to_f
 
-square = sub.map { |s| s ** 2 }
+    sub = @numbers.map { |number| number - divide }
 
-sum2 = square.sum
+    square = sub.map { |s| s ** 2 }
 
-divide2 = sum2 / num
+    sum2 = square.sum
 
-square = Math.sqrt(divide2).round(2)
+    divide2 = sum2 / num
 
-p square
+    square = Math.sqrt(divide2).round(2)
+
+    p square
+  end
+end
+
+standard_deviation = StandardDeviation.new([24, 30, 18, 20, 41])
+standard_deviation.calculate_standard_deviation
