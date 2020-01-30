@@ -1,5 +1,19 @@
 ages = [24, 30, 18, 20, 41]
 
-# Your code here for calculating the standard deviation
+sum = ages.sum
 
-# When you find the standard deviation, print it out
+num = ages.length
+
+divide = sum.to_f / num.to_f
+
+sub = ages.map { |age| age - divide }
+
+square = sub.map { |s| s ** 2 }
+
+sum2 = square.sum
+
+divide2 = sum2 / num
+
+square = Math.sqrt(divide2).round(2)
+
+p square
